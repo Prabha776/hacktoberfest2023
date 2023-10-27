@@ -2,5 +2,6 @@
 ## A sample block game:
 
 - The player has 3 lives where they have to move the block left and right .
-- Makesure you red block doesnot touches the other blocks.
-_ Play and enjoy the game.
+- Makesure your red block does not touch the other blocks.
+- After loosing 3 lives play again button will appear.
+- Play and enjoy the game.
