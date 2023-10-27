@@ -5,7 +5,7 @@
 - Clone on your local machine
 
 ```terminal
-git clone "your url to colne"
+git clone "your url to clone"
 ```
 - Navigate to project directory.
 ```terminal
