@@ -1,10 +1,11 @@
-// Create a Paper.js project
+// Create a Paper.js project for a simple game
+
 const canvas = document.getElementById("myCanvas");
 canvas.width = 600;
 canvas.height = 480;
 paper.setup(canvas);
 
-// Define the game variables
+// Define game variables
 let score = 0;
 let lives = 3;
 let gameover = false;
@@ -42,7 +43,7 @@ paper.view.onKeyDown = function(event) {
   }
 };
 
-// Add a function to detect collisions between the player and the enemies
+// Function to detect collisions between the player and the enemies
 function detectCollisions() {
   if (player.intersects(blueEnemy) || player.intersects(greenEnemy)) {
     lives--;
@@ -60,9 +61,9 @@ function detectCollisions() {
       greenEnemy.position.y = 1;
     }
   }
-};
+}
 
-// Add a function to update the game variables and redraw the screen
+// Function to update the game variables and redraw the screen
 function update() {
   if (!gameover) {
     blueEnemy.position.y += 4;
@@ -81,14 +82,18 @@ function update() {
       greenEnemy.position.y = 1;
     }
     detectCollisions();
-  };
+  }
+
   // Clear the canvas
   paper.project.activeLayer.removeChildren();
+
   // Draw the player
   paper.project.activeLayer.addChild(player);
+
   // Draw the enemies
   paper.project.activeLayer.addChild(blueEnemy);
   paper.project.activeLayer.addChild(greenEnemy);
+
   // Show the score and lives
   const scoreText = new paper.PointText({
     point: [10, 30],
@@ -96,16 +101,18 @@ function update() {
     fillColor: "#450a0a",
     fontSize: 16,
   });
+
   const livesText = new paper.PointText({
     point: [10, 60],
     content: "Lives: " + lives,
     fillColor: "#450a0a",
     fontSize: 16,
   });
+
   // Add the text to the canvas
   paper.project.activeLayer.addChild(scoreText);
   paper.project.activeLayer.addChild(livesText);
-};
+}
 
 // Use Paper.js to animate the game
 paper.view.onFrame = function(event) {
